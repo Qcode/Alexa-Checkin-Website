@@ -6,7 +6,13 @@ import './AddButton.css';
 
 function AddButton(props) {
   return (
-    <Fab size="small" color="secondary" aria-label="Add" className="add-button">
+    <Fab
+      onClick={props.handleModal}
+      size="small"
+      color="secondary"
+      aria-label="Add"
+      className="add-button"
+    >
       <AddIcon />
     </Fab>
   );

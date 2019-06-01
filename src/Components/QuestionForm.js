@@ -3,21 +3,44 @@ import Proptypes from 'prop-types';
 import AddButton from './AddButton';
 
 import QuestionCard from './QuestionCard';
+import NewQuestionCard from './NewQuestionCard';
 
-function QuestionForm(props) {
-  return (
-    <div className="container">
-      <AddButton />
-      <h1>Active Questions</h1>
-      {props.questions.map((question, index) => (
-        <QuestionCard
-          question={question.question}
-          responses={question.responses}
-          index={index + 1}
+class QuestionForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+    this.handleModal = this.handleModal.bind(this);
+  }
+
+  handleModal() {
+    this.setState(prevState => ({
+      open: !prevState.open,
+    }));
+    console.log(this.state.open);
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <NewQuestionCard
+          open={this.state.open}
+          handleModal={this.handleModal}
+          setQuestion={this.props.setQuestion}
         />
-      ))}
-    </div>
-  );
+        <AddButton handleModal={this.handleModal} />
+        <h1>Active Questions</h1>
+        {this.props.questions.map((question, index) => (
+          <QuestionCard
+            question={question.question}
+            responses={question.responses}
+            index={index + 1}
+          />
+        ))}
+      </div>
+    );
+  }
 }
 
 QuestionForm.propTypes = {

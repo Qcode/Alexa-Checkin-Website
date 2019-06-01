@@ -5,10 +5,12 @@ class Front extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      setName: null,
       questions: [],
       error: null,
     };
     this.getQuestionSets();
+    this.setQuestion = this.setQuestion.bind(this);
   }
   getQuestionSets() {
     fetch(
@@ -16,12 +18,48 @@ class Front extends React.Component {
     )
       .then(questions => questions.json())
       .then(jsonResponse => {
-        this.setState({ questions: jsonResponse.questions });
+        this.setState({
+          questions: jsonResponse.questions,
+          setName: jsonResponse.setName,
+        });
       })
       .catch(err => this.setState({ error: 'error :(' }));
   }
+
+  setQuestion(values) {
+    return fetch(
+      'http://alexa-checkin-server-node.b8qmr9pfbm.us-east-1.elasticbeanstalk.com/questions',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          setName: this.state.setName,
+          questions: [
+            ...this.state.questions,
+            {
+              question: values.question,
+              responses: [],
+              id: 'something',
+            },
+          ],
+        }),
+      },
+    )
+      .then(questions => questions.json())
+      .then(jsonResponse => {
+        this.setState({ questions: jsonResponse.questions });
+      });
+  }
+
   render() {
-    return <QuestionForm questions={this.state.questions} />;
+    return (
+      <QuestionForm
+        setQuestion={this.setQuestion}
+        questions={this.state.questions}
+      />
+    );
   }
 }
 
