@@ -1,0 +1,19 @@
+.topnavbar {
+  display: flex;
+  background-color: #3fa6e1;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item:first-child > span {
+  margin-right: auto;
+}
+
+.item:last-child > span {
+  margin-left: auto;
+}
