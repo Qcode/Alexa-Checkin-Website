@@ -10,7 +10,11 @@ function QuestionForm(props) {
       <AddButton />
       <h1>Active Questions</h1>
       {props.questions.map((question, index) => (
-        <QuestionCard question={question} index={index} />
+        <QuestionCard
+          question={question.question}
+          responses={question.responses}
+          index={index + 1}
+        />
       ))}
     </div>
   );
