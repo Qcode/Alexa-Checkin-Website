@@ -11,7 +11,9 @@ class Front extends React.Component {
     };
     this.getQuestionSets();
     this.setQuestion = this.setQuestion.bind(this);
+    this.editQuestion = this.editQuestion.bind(this);
   }
+
   getQuestionSets() {
     fetch(
       'http://alexa-checkin-server-node.b8qmr9pfbm.us-east-1.elasticbeanstalk.com/questions?setName=Demo',
@@ -53,11 +55,42 @@ class Front extends React.Component {
       });
   }
 
+  editQuestion(values) {
+    const filteredQuestions = this.state.questions.filter(
+      i => i.question !== values.question,
+    );
+    return fetch(
+      'http://alexa-checkin-server-node.b8qmr9pfbm.us-east-1.elasticbeanstalk.com/questions',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          setName: this.state.setName,
+          questions: [
+            filteredQuestions,
+            {
+              question: values.question,
+              responses: [],
+              id: 'something',
+            },
+          ],
+        }),
+      },
+    )
+      .then(questions => questions.json())
+      .then(jsonResponse => {
+        this.setState({ questions: jsonResponse.questions });
+      });
+  }
+
   render() {
     return (
       <QuestionForm
         setQuestion={this.setQuestion}
         questions={this.state.questions}
+        editQuestion={this.editQuestion}
       />
     );
   }

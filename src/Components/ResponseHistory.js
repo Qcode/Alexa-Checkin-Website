@@ -6,7 +6,7 @@ function ResponseHistory(props) {
       <h3>{props.history.location.state.question}</h3>
       {props.history.location.state.responses.map((response, index) => (
         <p>
-          <b>{`May ${index}:`}</b>
+          <b>{`May ${index + 1}:`}</b>
           {` ${response}`}
         </p>
       ))}

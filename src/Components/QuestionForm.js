@@ -33,6 +33,7 @@ class QuestionForm extends React.Component {
         <h1>Active Questions</h1>
         {this.props.questions.map((question, index) => (
           <QuestionCard
+            editQuestion={this.props.editQuestion}
             question={question.question}
             responses={question.responses}
             index={index + 1}
