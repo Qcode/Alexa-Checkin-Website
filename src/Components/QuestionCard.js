@@ -3,19 +3,34 @@ import Proptypes from 'prop-types';
 import { Switch, Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import EditButton from './EditButton';
+import EditQuestionCard from './EditQuestionCard';
+import HistoryIcon from '@material-ui/icons/Create';
 
 class QuestionCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      open: false,
+    };
+    this.handleModal = this.handleModal.bind(this);
   }
+
+  handleModal() {
+    this.setState(prevState => ({ open: !prevState.open }));
+  }
+
   render() {
     return (
       <div className="container" style={{ backgroundColor: '#F3F3F3' }}>
-        <EditButton editQuestion={this.props.editQuestion} />
-        <Switch />
+        <EditButton handleModal={this.handleModal} />
+        <EditQuestionCard
+          handleModal={this.handleModal}
+          editQuestion={this.props.editQuestion}
+          open={this.state.open}
+        />
+        {/* <Switch /> */}
         <h6>{this.props.index}</h6>
-        <p>{this.props.question}</p>
+        <p className="questionCardQuestion">{this.props.question}</p>
         <Button
           onClick={() =>
             this.props.history.push('/response', {
@@ -25,7 +40,7 @@ class QuestionCard extends React.Component {
             })
           }
         >
-          View Responses
+          responses
         </Button>
       </div>
     );

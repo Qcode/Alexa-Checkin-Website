@@ -4,35 +4,47 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #d3e3e7;
+  background-color: white;
   background-size: cover;
 }
 
 h1 {
-  color: #1a242b;
+  color: #434343ff;
+  letter-spacing: 0.02em;
+  font-weight: 500;
 }
 p {
-  color: #1a242b;
+  color: #434343ff;
 }
 h6 {
   position: absolute;
   top: -16px;
   left: 9px;
-  color: #1a242b;
+  color: #434343ff;
 }
 
 .container {
-  background-color: #3fa6e1;
+  background-color: #f1c232;
   margin: auto;
   border-radius: 8px;
   padding: 16px;
   position: relative;
   text-align: left;
-  margin: 2em;
-  box-shadow: 7px 7px 2px 2px #1a242b;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-right: 4em;
+  margin-left: 4em;
+  box-shadow: 7px 7px 2px 2px #434343ff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.questionCardQuestion {
+  font-size: 24px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-bottom: 0px;
 }
