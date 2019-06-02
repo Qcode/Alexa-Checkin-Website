@@ -1,0 +1,12 @@
+.questionHeading {
+    text-align: center;
+    font-size: 25pt;
+    letter-spacing: 2pt;
+    margin: 0px!important;
+}
+
+.dateCell {
+    border-right: 1px solid black;
+    margin-right: 5px;
+    font-size: 18px;
+}
