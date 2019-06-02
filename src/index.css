@@ -24,7 +24,7 @@ h6 {
 }
 
 .container {
-  background-color: #f1c232;
+  background-color: #434343ff;
   margin: auto;
   border-radius: 8px;
   padding: 16px;
@@ -34,7 +34,6 @@ h6 {
   margin-bottom: 2em;
   margin-right: 4em;
   margin-left: 4em;
-  box-shadow: 7px 7px 2px 2px #434343ff;
 }
 
 code {
@@ -47,4 +46,5 @@ code {
   margin-top: 8px;
   margin-left: 8px;
   margin-bottom: 0px;
+  color: #434343ff;
 }

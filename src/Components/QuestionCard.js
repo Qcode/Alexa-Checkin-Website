@@ -21,7 +21,7 @@ class QuestionCard extends React.Component {
 
   render() {
     return (
-      <div className="container" style={{ backgroundColor: '#F3F3F3' }}>
+      <div className="container" style={{ backgroundColor: '#f1c232' }}>
         <EditButton handleModal={this.handleModal} />
         <EditQuestionCard
           handleModal={this.handleModal}

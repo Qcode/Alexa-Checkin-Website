@@ -3,6 +3,7 @@
     font-size: 24pt;
     letter-spacing: 0.02em;
     margin: 0px!important;
+    color: #434343ff!important;
 }
 
 .dateCell {
@@ -14,6 +15,7 @@
 table {
     width: -webkit-fill-available;
     border-collapse: collapse;
+    color: black;
 }
 
 td {
@@ -36,4 +38,17 @@ tr:hover{
 
 h1{
     text-align: center;
+}
+
+.responseContainer{
+    background-color: #f1c232;
+    margin: auto;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 4em;
+    margin-left: 4em;
 }

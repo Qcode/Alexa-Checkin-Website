@@ -10,13 +10,14 @@ function Pager(props) {
         <ArrowLeft
           className="left-arrow arrow"
           onClick={props.decreaseQuestion}
+          fontSize="large"
         />
       ) : null}
-      <p className="pager-text">{props.setName}</p>
       {props.currentQuestion < props.numberOfSets - 1 ? (
         <ArrowRight
           className="right-arrow arrow"
           onClick={props.increaseQuestion}
+          fontSize="large"
         />
       ) : null}
     </div>

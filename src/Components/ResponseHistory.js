@@ -3,8 +3,8 @@ import './ResponseHistory.css';
 
 function ResponseHistory(props) {
   return (
-    <div className="container">
-      <h1>{props.history.location.state.question}</h1>
+    <div className="responseContainer">
+      <h1 className="questionHeading">{props.history.location.state.question}</h1>
       <table>
         {props.history.location.state.responses.map((response, index) => (
           <tr>

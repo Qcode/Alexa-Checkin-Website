@@ -32,8 +32,7 @@ class QuestionForm extends React.Component {
           setQuestion={this.props.setQuestion}
         />
         <AddButton handleModal={this.handleModal} />
-        <h1>Active Questions - {this.props.setName}</h1>
-        <h1 className="activeQuestions">Active Questions - {this.props.setName}</h1>
+        <h1 className="activeQuestions">{this.props.setName}</h1>
         {
           this.props.questions.map((question, index) => (
             <QuestionCard

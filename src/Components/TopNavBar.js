@@ -12,7 +12,7 @@ function TopNavBar(props) {
         </Button>
       </div> */}
       <div className="item">
-        <h1>InTouch</h1>
+        <h1 class="title">InTouch</h1>
       </div>
       <div className="item">
         <SettingsButton />

@@ -35,7 +35,7 @@ class Front extends React.Component {
     setNames.forEach(setName =>
       fetch(
         'http://alexa-checkin-server-node.b8qmr9pfbm.us-east-1.elasticbeanstalk.com/questions?setName=' +
-          setName,
+        setName,
       )
         .then(questions => questions.json())
         .then(jsonResponse => {
