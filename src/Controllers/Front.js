@@ -69,17 +69,28 @@ class Front extends React.Component {
         body: JSON.stringify({
           setName: this.state.setName,
           questions: [
-            filteredQuestions,
+            ...filteredQuestions,
             {
               question: values.question,
-              responses: [],
-              id: 'something',
+              responses: values.responses,
+              id: values.id,
             },
           ],
         }),
       },
     )
-      .then(questions => questions.json())
+      .then(questions =>
+        this.setState({
+          questions: [
+            ...filteredQuestions,
+            {
+              question: values.question,
+              responses: values.responses,
+              id: values.id,
+            },
+          ],
+        }),
+      )
       .then(jsonResponse => {
         this.setState({ questions: jsonResponse.questions });
       });

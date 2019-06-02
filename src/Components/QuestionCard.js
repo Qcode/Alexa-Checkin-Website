@@ -3,16 +3,30 @@ import Proptypes from 'prop-types';
 import { Switch, Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import EditButton from './EditButton';
+import EditQuestionCard from './EditQuestionCard';
 
 class QuestionCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      open: false,
+    };
+    this.handleModal = this.handleModal.bind(this);
   }
+
+  handleModal() {
+    this.setState(prevState => ({ open: !prevState.open }));
+  }
+
   render() {
     return (
       <div className="container" style={{ backgroundColor: '#F3F3F3' }}>
-        <EditButton editQuestion={this.props.editQuestion} />
+        <EditButton handleModal={this.handleModal} />
+        <EditQuestionCard
+          handleModal={this.handleModal}
+          editQuestion={this.props.editQuestion}
+          open={this.state.open}
+        />
         <Switch />
         <h6>{this.props.index}</h6>
         <p>{this.props.question}</p>

@@ -32,6 +32,7 @@ function EditQuestionCard(props) {
 export default withFormik({
   mapPropsToValues: props => ({
     question: props.question,
+    id: props,
   }),
   handleSubmit: (values, formikBag) => {
     formikBag.props
