@@ -6,13 +6,13 @@ import './TopNavBar.css';
 function TopNavBar(props) {
   return (
     <div className="topnavbar">
-      <div className="item">
+      {/* <div className="item">
         <Button variant="contained" color="secondary">
           View History
         </Button>
-      </div>
+      </div> */}
       <div className="item">
-        <h1>In Touch</h1>
+        <h1>InTouch</h1>
       </div>
       <div className="item">
         <SettingsButton />

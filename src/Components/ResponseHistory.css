@@ -1,0 +1,39 @@
+.questionHeading {
+    text-align: center;
+    font-size: 24pt;
+    letter-spacing: 0.02em;
+    margin: 0px!important;
+}
+
+.dateCell {
+    font-size: 18px;
+    padding-right: 0px!important;
+    width: 4em;
+} 
+
+table {
+    width: -webkit-fill-available;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+}
+
+h3{
+    text-align: center;
+    letter-spacing: 0.02em;
+    font-size: 24px;
+}
+
+tr{
+    width: -webkit-fill-available;
+}
+
+tr:hover{
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+}

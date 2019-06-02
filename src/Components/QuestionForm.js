@@ -6,6 +6,8 @@ import QuestionCard from './QuestionCard';
 import NewQuestionCard from './NewQuestionCard';
 import './QuestionForm.css';
 
+import './QuestionForm.css'
+
 class QuestionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -31,15 +33,18 @@ class QuestionForm extends React.Component {
         />
         <AddButton handleModal={this.handleModal} />
         <h1>Active Questions - {this.props.setName}</h1>
-        {this.props.questions.map((question, index) => (
-          <QuestionCard
-            editQuestion={this.props.editQuestion}
-            question={question.question}
-            responses={question.responses}
-            index={index + 1}
-          />
-        ))}
-      </div>
+        <h1 className="activeQuestions">Active Questions - {this.props.setName}</h1>
+        {
+          this.props.questions.map((question, index) => (
+            <QuestionCard
+              editQuestion={this.props.editQuestion}
+              question={question.question}
+              responses={question.responses}
+              index={index + 1}
+            />
+          ))
+        }
+      </div >
     );
   }
 }

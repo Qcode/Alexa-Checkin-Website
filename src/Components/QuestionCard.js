@@ -4,6 +4,7 @@ import { Switch, Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import EditButton from './EditButton';
 import EditQuestionCard from './EditQuestionCard';
+import HistoryIcon from '@material-ui/icons/Create';
 
 class QuestionCard extends React.Component {
   constructor(props) {
@@ -27,9 +28,9 @@ class QuestionCard extends React.Component {
           editQuestion={this.props.editQuestion}
           open={this.state.open}
         />
-        <Switch />
+        {/* <Switch /> */}
         <h6>{this.props.index}</h6>
-        <p>{this.props.question}</p>
+        <p className="questionCardQuestion">{this.props.question}</p>
         <Button
           onClick={() =>
             this.props.history.push('/response', {
@@ -39,7 +40,7 @@ class QuestionCard extends React.Component {
             })
           }
         >
-          View Responses
+          responses
         </Button>
       </div>
     );

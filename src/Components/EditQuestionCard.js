@@ -1,14 +1,15 @@
 import React from 'react';
 import { TextField, Modal, Button } from '@material-ui/core';
 import { withFormik } from 'formik';
+import './EditQuestionCard.css';
 
 function EditQuestionCard(props) {
   return (
     <Modal open={props.open} onClose={props.handleModal}>
-      <div className="container" style={{ margin: '20%' }}>
-        <h2>Edit Your Question</h2>
+      <div className="editContainer" style={{ margin: '20%' }}>
+        <h2 className="editHeading">Edit Your Question</h2>
         <TextField
-          label="New Question"
+          label="Edit Question"
           id="question"
           fullWidth
           variant="outlined"
@@ -18,6 +19,7 @@ function EditQuestionCard(props) {
           name="question"
         />
         <Button
+          className="submitButton"
           color="secondary"
           variant="contained"
           onClick={props.handleSubmit}

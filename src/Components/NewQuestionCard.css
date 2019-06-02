@@ -1,0 +1,25 @@
+.submitButton {
+    margin-top: 8px!important;
+}
+
+.newHeading {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: 8px;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+}
+
+.newContainer {
+    background-color: white;
+    margin: auto;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 4em;
+    margin-left: 4em;
+    box-shadow: 7px 7px 2px 2px #434343ff;
+  }

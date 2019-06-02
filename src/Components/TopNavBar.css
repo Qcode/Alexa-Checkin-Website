@@ -1,10 +1,13 @@
 .topnavbar {
   display: flex;
-  background-color: #3fa6e1;
+  background-color: #f1c232;
+  height: 64px;
+  justify-content: space-between;
+  padding-left: 4em;
+  padding-right: 4em;
 }
 
 .item {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
