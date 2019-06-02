@@ -4,6 +4,7 @@ import AddButton from './AddButton';
 
 import QuestionCard from './QuestionCard';
 import NewQuestionCard from './NewQuestionCard';
+import './QuestionForm.css';
 
 class QuestionForm extends React.Component {
   constructor(props) {
@@ -22,14 +23,14 @@ class QuestionForm extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container container-form">
         <NewQuestionCard
           open={this.state.open}
           handleModal={this.handleModal}
           setQuestion={this.props.setQuestion}
         />
         <AddButton handleModal={this.handleModal} />
-        <h1>Active Questions</h1>
+        <h1>Active Questions - {this.props.setName}</h1>
         {this.props.questions.map((question, index) => (
           <QuestionCard
             editQuestion={this.props.editQuestion}
